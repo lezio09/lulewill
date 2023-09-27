@@ -3,7 +3,8 @@ package lulewill;
 public class SistemaMain {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		System.out.println("Teste para o Lucas e Lezio");
+		System.out.println("Git é magico");
 
 	}
 
