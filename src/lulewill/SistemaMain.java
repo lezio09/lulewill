@@ -87,9 +87,6 @@ public class SistemaMain {
 
 		}
 	}
-
-	
-	
 	public static void menuPrucura() {
 		
 		Scanner leitura = new Scanner(System.in);
@@ -121,7 +118,6 @@ public class SistemaMain {
 
 			munuBmw();
 			break;
-
 		}
 
 		case 3: {
@@ -140,9 +136,9 @@ public class SistemaMain {
 		}
 		}
 	}
-	
-	
-	
+	public static void menuAlterar() {
+		
+	}
 	
 	
 	
@@ -153,7 +149,7 @@ public class SistemaMain {
 
 		Scanner leitura = new Scanner(System.in);
 
-		System.out.println("-----BMW-----");
+		System.out.println("-------------BMW-------------");
 		System.out.println();
 		System.out.println("1 - BMW Z4      PREÇO:R$ 850.000 ");
 		System.out.println("2 - BMW SERIE 4 PREÇO:R$ 925.000 ");
@@ -163,6 +159,7 @@ public class SistemaMain {
 
 		int op3 = Integer.valueOf(leitura.nextLine());
 
+		
 		// clase para o carrinho
 		if (op3 == 1) {
 			System.out.println("Voce deseja add BMW Z4 ou carrinho ?");
@@ -228,17 +225,16 @@ public class SistemaMain {
 		if (op3 == 4) {
 			System.out.println("Voltando ao menu");
 			System.out.println();
-
+			menuPrucura();
 		}
 
 	}
-
 	// menu Bugatti
 	public static void munuBugatti() {
 
 		Scanner leitura = new Scanner(System.in);
 
-		System.out.println("-----Bugatti-----");
+		System.out.println("-------------Bugatti-------------");
 		System.out.println();
 		System.out.println("1 - Bugatti Chiron     PREÇO:R$ 950.000     ");
 		System.out.println("2 - Bugatti Veyron 	   PREÇO:R$ 1.425.000   ");
@@ -313,7 +309,7 @@ public class SistemaMain {
 		if (op3 == 4) {
 			System.out.println("Voltando ao menu");
 			System.out.println();
-
+			menuPrucura();
 		}
 
 	}
@@ -322,7 +318,7 @@ public class SistemaMain {
 
 		Scanner leitura = new Scanner(System.in);
 
-		System.out.println("-----Fiat-----");
+		System.out.println("-------------Fiat-------------");
 		System.out.println();
 		System.out.println("1 - Fiat Argo   PREÇO:R$ 80.000 ");
 		System.out.println("2 - Fiat Doblo  PREÇO:R$ 25.000 ");
@@ -399,7 +395,7 @@ public class SistemaMain {
 		if (op3 == 4) {
 			System.out.println("Voltando ao menu");
 			System.out.println();
-			munuFiat();
+			menuPrucura();
 
 		}
 
@@ -486,7 +482,7 @@ public class SistemaMain {
 		if (op3 == 4) {
 			System.out.println("Voltando ao menu");
 			System.out.println();
-			munuGtr();
+			menuPrucura();
 
 		}
 
