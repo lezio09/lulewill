@@ -97,7 +97,7 @@ public class SistemaMain {
 
 			System.out.println("Veiculo Cadastrado");
 			System.out.println();
-			System.out.println("Você cadastrou um: " + modelo);
+			System.out.println("Voce cadastrou: " + modelo);
 			System.out.println("Ano: " + ano);
 			System.out.println();
 		}
@@ -121,6 +121,7 @@ public class SistemaMain {
 		System.out.println("4 - Fiat   ");
 		System.out.println("5 - GTR    ");
 		// Add modelo cadastrado
+		//
 		System.out.println();
 
 		int op2 = Integer.valueOf(leitura.nextLine());
