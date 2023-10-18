@@ -6,9 +6,11 @@ import java.util.Scanner;
 public class SistemaMain {
 
 	public static void main(String[] args) {
-		
-		
+
 		ArrayList<CadastrarVei> veiculos = new ArrayList<>();
+
+		
+		ArrayList<CadastrarVei> Carrinho = new ArrayList<>();
 		
 		
 		
@@ -16,33 +18,28 @@ public class SistemaMain {
 		
 		
 		
-		
-		
+
+
 		Scanner leitura = new Scanner(System.in);
 
 		int op = 1;
 
 		while (op != 0) {
 
+		
 			System.out.println("-----MENU EXEMPLO-----");
 			System.out.println();
 			System.out.println("0 - SAIR DO PROGRAMA  ");
 			System.out.println("1 - CADASTRAR VEICULO ");
-			System.out.println("2 - PROUCURAR VEICULO ");
-		
-			
 
-			}
-			
-			
-			
-			
+			System.out.println("2 - PROUCURAR VEICULO ");	
+			System.out.println("2 - PROUCURAR VEICULO ");		
 			System.out.println("3 - ALTERAR PEDIDO    ");
 			System.out.println("----------------------");
 			System.out.println();
-
+		
 			op = Integer.valueOf(leitura.nextLine());
-
+		
 			switch (op) {
 			case 0: {
 
@@ -53,24 +50,22 @@ public class SistemaMain {
 			}
 			case 1: {
 
-				//Cadastro
+				// Cadastro
 				menuCadastro();
 				break;
 			}
 			case 2: {
-				
+
 				menuPrucura();
 
 			}
-			
-			case 3:{
-				//menuAlterar
-			}
-			}
 
+			case 3: {
+				// menuAlterar
+			}
+			}
 		}
-
-
+	}
 
 	// parte do cadastro
 	public static void menuCadastro() {
@@ -97,7 +92,7 @@ public class SistemaMain {
 
 			System.out.println("Veiculo Cadastrado");
 			System.out.println();
-			System.out.println("Voce cadastrou: " + modelo);
+			System.out.println("Você cadastrou um: " + modelo);
 			System.out.println("Ano: " + ano);
 			System.out.println();
 		}
@@ -107,10 +102,11 @@ public class SistemaMain {
 
 		}
 	}
+
 	public static void menuPrucura() {
-		
+
 		Scanner leitura = new Scanner(System.in);
-		
+
 		System.out.println("|Procurar veiculos|");
 		System.out.println();
 		System.out.println("Marcas de veiculos disponiveis");
@@ -121,7 +117,6 @@ public class SistemaMain {
 		System.out.println("4 - Fiat   ");
 		System.out.println("5 - GTR    ");
 		// Add modelo cadastrado
-		//
 		System.out.println();
 
 		int op2 = Integer.valueOf(leitura.nextLine());
@@ -157,14 +152,11 @@ public class SistemaMain {
 		}
 		}
 	}
+
 	public static void menuAlterar() {
-		
+
 	}
-	
-	
-	
-	
-	
+
 	// menu da bmw
 	public static void munuBmw() {
 
@@ -180,7 +172,6 @@ public class SistemaMain {
 
 		int op3 = Integer.valueOf(leitura.nextLine());
 
-		
 		// clase para o carrinho
 		if (op3 == 1) {
 			System.out.println("Voce deseja add BMW Z4 ou carrinho ?");
@@ -250,6 +241,7 @@ public class SistemaMain {
 		}
 
 	}
+
 	// menu Bugatti
 	public static void munuBugatti() {
 
@@ -470,7 +462,7 @@ public class SistemaMain {
 			if (nd == 1) {
 				System.out.println("Produto adicionado");
 				System.out.println();
-			
+
 				munuGtr();
 			}
 
