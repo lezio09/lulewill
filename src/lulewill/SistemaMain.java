@@ -12,12 +12,7 @@ public class SistemaMain {
 		
 		ArrayList<CadastrarVei> Carrinho = new ArrayList<>();
 		
-		
-		
-		
-		
-		
-		
+
 
 
 		Scanner leitura = new Scanner(System.in);
@@ -33,7 +28,8 @@ public class SistemaMain {
 			System.out.println("1 - CADASTRAR VEICULO ");
 
 			System.out.println("2 - PROUCURAR VEICULO ");	
-			System.out.println("2 - PROUCURAR VEICULO ");		
+			System.out.println("2 - PROUCURAR VEICULO ");					System.out.println("2 - PROUCURAR VEICULO ");	
+
 			System.out.println("3 - ALTERAR PEDIDO    ");
 			System.out.println("----------------------");
 			System.out.println();
@@ -66,6 +62,7 @@ public class SistemaMain {
 			}
 		}
 	}
+
 
 	// parte do cadastro
 	public static void menuCadastro() {
