@@ -1,11 +1,23 @@
 package lulewill;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SistemaMain {
 
 	public static void main(String[] args) {
-
+		
+		
+		ArrayList<CadastrarVei> veiculos = new ArrayList<>();
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		Scanner leitura = new Scanner(System.in);
 
 		int op = 1;
@@ -17,6 +29,14 @@ public class SistemaMain {
 			System.out.println("0 - SAIR DO PROGRAMA  ");
 			System.out.println("1 - CADASTRAR VEICULO ");
 			System.out.println("2 - PROUCURAR VEICULO ");
+		
+			
+
+			}
+			
+			
+			
+			
 			System.out.println("3 - ALTERAR PEDIDO    ");
 			System.out.println("----------------------");
 			System.out.println();
@@ -50,7 +70,7 @@ public class SistemaMain {
 
 		}
 
-	}
+
 
 	// parte do cadastro
 	public static void menuCadastro() {
@@ -77,7 +97,7 @@ public class SistemaMain {
 
 			System.out.println("Veiculo Cadastrado");
 			System.out.println();
-			System.out.println("Voce cadastrouum: " + modelo);
+			System.out.println("Você cadastrou um: " + modelo);
 			System.out.println("Ano: " + ano);
 			System.out.println();
 		}
