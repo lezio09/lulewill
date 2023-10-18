@@ -10,7 +10,7 @@ public class SistemaMain {
 		
 		ArrayList<CadastrarVei> veiculos = new ArrayList<>();
 		
-		
+		ArrayList<CadastrarVei> Carrinho = new ArrayList<>();
 		
 		
 		
@@ -24,25 +24,18 @@ public class SistemaMain {
 
 		while (op != 0) {
 
+		
 			System.out.println("-----MENU EXEMPLO-----");
 			System.out.println();
 			System.out.println("0 - SAIR DO PROGRAMA  ");
 			System.out.println("1 - CADASTRAR VEICULO ");
-			System.out.println("2 - PROUCURAR VEICULO ");
-		
-			
-
-			}
-			
-			
-			
-			
+			System.out.println("2 - PROUCURAR VEICULO ");	
 			System.out.println("3 - ALTERAR PEDIDO    ");
 			System.out.println("----------------------");
 			System.out.println();
-
+		
 			op = Integer.valueOf(leitura.nextLine());
-
+		
 			switch (op) {
 			case 0: {
 
@@ -69,7 +62,7 @@ public class SistemaMain {
 			}
 
 		}
-
+	}
 
 
 	// parte do cadastro
