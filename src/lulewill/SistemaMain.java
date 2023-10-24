@@ -2,17 +2,15 @@ package lulewill;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.List;
 
 public class SistemaMain {
-
+	static List<Veiculo> veiculosDisponiveis = new ArrayList<>();
+	static List<Veiculo> carrinho= new ArrayList<>();
+	
 	public static void main(String[] args) {
-
-		ArrayList<CadastrarVei> veiculos = new ArrayList<>();
-
-		
-		ArrayList<CadastrarVei> Carrinho = new ArrayList<>();
-		
-
+		Scanner scanner = new Scanner(System.in);
+		Carrinho carrinho = new Carrinho();
 
 
 		Scanner leitura = new Scanner(System.in);
@@ -63,9 +61,8 @@ public class SistemaMain {
 
 	// parte do cadastro
 	public static void menuCadastro() {
-
+		 
 		Scanner leitura = new Scanner(System.in);
-		List<Veiculo> veiculosDisponiveis = new ArrayList<>();
 		Carrinho carrinho = new Carrinho();
 
 		System.out.print("Nome do veículo: ");
@@ -80,12 +77,7 @@ public class SistemaMain {
 		Veiculo novoVeiculo = new Veiculo(modelo, ano, nome);
 		veiculosDisponiveis.add(novoVeiculo);
 
-		// System.out.println("modelo: ");
-		// String modelo = leitura.nextLine();
-
-		// System.out.println("Ano: ");
-		// int ano = Integer.valueOf(leitura.nextLine());
-
+		
 		System.out.println();
 		System.out.println("Tem certeza que quer cadastrar o veiculo ?");
 		System.out.println("1 - Sim");
@@ -110,6 +102,8 @@ public class SistemaMain {
 	}
 
 	public static void menuPrucura() {
+		
+		
 
 		Scanner leitura = new Scanner(System.in);
 
@@ -122,6 +116,7 @@ public class SistemaMain {
 		System.out.println("3 - Bugatti");
 		System.out.println("4 - Fiat   ");
 		System.out.println("5 - GTR    ");
+		System.out.println("6 - veiculo cadastrado");
 		// Add modelo cadastrado
 		System.out.println();
 
@@ -155,6 +150,18 @@ public class SistemaMain {
 		case 5: {
 			munuGtr();
 			break;
+		}
+		case 6: {
+		for (Veiculo veiculos : veiculosDisponiveis) {
+			
+			System.out.println("Nome: ");
+			System.out.println(veiculos.getNome());
+			System.out.println("Modelo: ");
+			System.out.println(veiculos.getModelo());
+			System.out.println("Ano: ");
+			System.out.println(veiculos.getAno());
+			
+		}
 		}
 		}
 	}
