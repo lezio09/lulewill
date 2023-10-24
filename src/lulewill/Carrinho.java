@@ -1,29 +1,24 @@
 package lulewill;
 
-public class Carrinho {
+import java.util.ArrayList;
+import java.util.List;
 
-	private String Nome;
-	private String Modelo;
-	private int Preco;
-	public String getNome() {
-		
-		return Nome;
-	}
-	public void setNome(String nome) {
-		Nome = nome;
-	}
-	public String getModelo() {
-		return Modelo;
-	}
-	public void setModelo(String modelo) {
-		Modelo = modelo;
-	}
-	public int getPreco() {
-		return Preco;
-	}
-	public void setPreco(int preco) {
-		Preco = preco;
-	}
-	
-	
+class Carrinho {
+    private List<Veiculo> itens = new ArrayList<>();
+
+    public void adicionarItem(Veiculo item) {
+        itens.add(item);
+    }
+
+    public void removerItem(Veiculo item) {
+        itens.remove(item);
+    }
+
+    public List<Veiculo> getItens() {
+        return itens;
+    }
+
+    public void setItens(List<Veiculo> itens) {
+        this.itens = itens;
+    }
 }
