@@ -83,7 +83,14 @@ public class SistemaMain {
 		System.out.println("1 - Sim");
 		System.out.println("2 - Nao");
 		System.out.println();
+		
+		
+		///////////////////////////////////////////////////////////////
+		/////setar carrinho
+		Carrinho novoCarrinho = new Carrinho();
+		
 
+		
 		int op2 = Integer.valueOf(leitura.nextLine());
 
 		if (op2 == 1) {
@@ -403,7 +410,9 @@ public class SistemaMain {
 			System.out.println("1 - sim");
 			System.out.println("2 - nao");
 			System.out.println();
-
+			
+			
+			
 			int nd = Integer.valueOf(leitura.nextLine());
 
 			if (nd == 1) {

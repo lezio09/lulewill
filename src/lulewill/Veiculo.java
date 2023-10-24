@@ -9,6 +9,8 @@ class Veiculo {
         this.nome = nome;
         this.modelo = modelo;
         this.ano = ano;
+  
+        
     }
 
     public String getModelo() {
