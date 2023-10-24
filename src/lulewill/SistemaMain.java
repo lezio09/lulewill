@@ -65,49 +65,26 @@ public class SistemaMain {
 	public static void menuCadastro() {
 
 		Scanner leitura = new Scanner(System.in);
-		System.out.println("Cadastrar Veiculo");
-		System.out.println();
-		
-		//ArrayList<CadastrarVei> car = new ArrayList<>();
-		CadastrarVei car1 = new CadastrarVei();
-		car1.setNome("McLaren");
-		car1.setModelo("Super");
-		car1.setAno("2018");
-		System.out.println();
-		
-		CadastrarVei car2 = new CadastrarVei();
-		car2.setNome("Honda");
-		car2.setModelo("Civic");
-		car2.setAno("2022");
-		System.out.println(); 
-		
-		CadastrarVei car3 = new CadastrarVei();
-		car3.setNome("Volkswagen");
-		car3.setModelo("T-Cross");
-		car3.setAno("2021");
-		
-		ArrayList<CadastrarVei> car = new ArrayList<>();
-		car.add(car1);
-		car.add(car2);
-		car.add(car3);
-		
-		for (CadastrarVei cadastrarVei : car) {
-			
-			
-			System.out.println(cadastrarVei.getNome());
-			System.out.println(cadastrarVei.getModelo());
-			System.out.println(cadastrarVei.getAno());
-			
-		}
+		List<Veiculo> veiculosDisponiveis = new ArrayList<>();
+		Carrinho carrinho = new Carrinho();
 
-		
-		
+		System.out.print("Nome do veículo: ");
+		String nome = leitura.nextLine();
 
-		//System.out.println("modelo: ");
-		//String modelo = leitura.nextLine();
+		System.out.print("Modelo do veículo: ");
+		String modelo = leitura.nextLine();
 
-		//System.out.println("Ano: ");
-		//int ano = Integer.valueOf(leitura.nextLine());
+		System.out.print("Ano do veículo: ");
+		String ano = leitura.nextLine();
+
+		Veiculo novoVeiculo = new Veiculo(modelo, ano, nome);
+		veiculosDisponiveis.add(novoVeiculo);
+
+		// System.out.println("modelo: ");
+		// String modelo = leitura.nextLine();
+
+		// System.out.println("Ano: ");
+		// int ano = Integer.valueOf(leitura.nextLine());
 
 		System.out.println();
 		System.out.println("Tem certeza que quer cadastrar o veiculo ?");
