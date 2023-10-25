@@ -13,7 +13,11 @@ class Veiculo {
         
     }
 
-    public String getModelo() {
+    public Veiculo() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public String getModelo() {
         return modelo;
     }
 
@@ -41,4 +45,9 @@ class Veiculo {
     public String toString() {
         return "Nome: " + nome + ", Modelo: " + modelo + ", Ano: " + ano;
     }
+
+	public void setAno(int novoAno) {
+		// TODO Auto-generated method stub
+		
+	}
 }
