@@ -6,12 +6,12 @@ import java.util.List;
 
 public class SistemaMain {
 	static List<Veiculo> veiculosDisponiveis = new ArrayList<>();
-	static List<Veiculo> carrinho= new ArrayList<>();
-	
+	static List<Veiculo> carrinho = new ArrayList<>();
+
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		Carrinho carrinho = new Carrinho();
-
+		Veiculo veiculo = new Veiculo();
 
 		Scanner leitura = new Scanner(System.in);
 
@@ -19,18 +19,17 @@ public class SistemaMain {
 
 		while (op != 0) {
 
-		
 			System.out.println("-----MENU EXEMPLO-----");
 			System.out.println();
 			System.out.println("0 - SAIR DO PROGRAMA  ");
 			System.out.println("1 - CADASTRAR VEICULO ");
-			System.out.println("2 - PROUCURAR VEICULO ");	
+			System.out.println("2 - PROUCURAR VEICULO ");
 			System.out.println("3 - ALTERAR PEDIDO    ");
 			System.out.println("----------------------");
 			System.out.println();
-		
+
 			op = Integer.valueOf(leitura.nextLine());
-		
+
 			switch (op) {
 			case 0: {
 
@@ -48,98 +47,94 @@ public class SistemaMain {
 			case 2: {
 
 				menuPrucura();
+				break;
 
 			}
 
 			case 3: {
 				Scanner leitura1 = new Scanner(System.in);
 
-			    System.out.println("----- MENU ALTERAR VEÍCULO CADASTRADO -----");
-			    System.out.println("1 - Alterar nome do veículo");
-			    System.out.println("2 - Alterar modelo do veículo");
-			    System.out.println("3 - Alterar ano do veículo");
-			    System.out.println("4 - Voltar ao menu principal");
-			    System.out.println();
+				System.out.println("----- MENU ALTERAR VEÍCULO CADASTRADO -----");
+				System.out.println("1 - Alterar nome do veículo");
+				System.out.println("2 - Alterar modelo do veículo");
+				System.out.println("3 - Alterar ano do veículo");
+				System.out.println("4 - Voltar ao menu principal");
+				System.out.println();
 
-			    int op1 = Integer.valueOf(leitura1.nextLine());
+				int op1 = Integer.valueOf(leitura1.nextLine());
 
-			    Veiculo veiculo = new Veiculo();
 				switch (op1) {
-			        case 1:
-			            // Alterar nome do veículo
-			            System.out.print("Digite o novo nome do veículo: ");
-			            String novoNome = leitura1.nextLine();
-			            veiculo.setNome(novoNome); // 'veiculo' representa o veículo que você deseja alterar
-			            System.out.println("Nome do veículo alterado com sucesso.");
-			            break;
-			        case 2:
-			            // Alterar modelo do veículo
-			            System.out.print("Digite o novo modelo do veículo: ");
-			            String novoModelo = leitura1.nextLine();
-			            veiculo.setModelo(novoModelo); // 'veiculo' representa o veículo que você deseja alterar
-			            System.out.println("Modelo do veículo alterado com sucesso.");
-			            break;
-			        case 3:
-			            // Alterar ano do veículo
-			            System.out.print("Digite o novo ano do veículo: ");
-			            String novoAno = leitura1.nextLine();
-			            veiculo.setAno(novoAno); // 'veiculo' representa o veículo que você deseja alterar
-			            System.out.println("Ano do veículo alterado com sucesso.");
-			            break;
-			        case 4:
-			            // Voltar ao menu principal
-			            break;
-			        default:
-			            System.out.println("Opção inválida. Por favor, escolha uma opção válida.");
-			            break;
-			    }
-			}
+				case 1:
+
+					// Alterar nome do veículo
+					System.out.print("Digite o novo nome do veículo: ");
+					String novoNome = leitura1.nextLine();
+					veiculo.setNome(novoNome); // 'veiculo' representa o veículo que você deseja alterar
+					System.out.println("Nome do veículo alterado com sucesso.");
+					break;
+				case 2:
+					// Alterar modelo do veículo
+					System.out.print("Digite o novo modelo do veículo: ");
+					String novoModelo = leitura1.nextLine();
+					veiculo.setModelo(novoModelo); // 'veiculo' representa o veículo que você deseja alterar
+					System.out.println("Modelo do veículo alterado com sucesso.");
+					break;
+				case 3:
+					// Alterar ano do veículo
+					System.out.print("Digite o novo ano do veículo: ");
+					String novoAno = leitura1.nextLine();
+					veiculo.setAno(novoAno); // 'veiculo' representa o veículo que você deseja alterar
+					System.out.println("Ano do veículo alterado com sucesso.");
+					break;
+				case 4:
+					// Voltar ao menu principal
+					break;
+				default:
+					System.out.println("Opção inválida. Por favor, escolha uma opção válida.");
+					break;
+				}
 			}
 			}
 		}
-
-
+	}
 
 	// parte do cadastro
 	public static void menuCadastro() {
-		 
+
 		Scanner leitura = new Scanner(System.in);
-		Carrinho carrinho = new Carrinho();
+		Veiculo veiculo = new Veiculo();
 
 		System.out.print("Nome do veículo: ");
 		String nome = leitura.nextLine();
-
+		veiculo.setNome(nome);
 		System.out.print("Modelo do veículo: ");
 		String modelo = leitura.nextLine();
+		veiculo.setModelo(modelo);
 
 		System.out.print("Ano do veículo: ");
 		String ano = leitura.nextLine();
+		veiculo.setAno(ano);
 
-		Veiculo novoVeiculo = new Veiculo(modelo, ano, nome);
-		veiculosDisponiveis.add(novoVeiculo);
+		veiculosDisponiveis.add(veiculo);
 
-		
 		System.out.println();
 		System.out.println("Tem certeza que quer cadastrar o veiculo ?");
 		System.out.println("1 - Sim");
 		System.out.println("2 - Nao");
 		System.out.println();
-		
-		
-		///////////////////////////////////////////////////////////////
-		/////setar carrinho
-		Carrinho novoCarrinho = new Carrinho();
-		
 
-		
+		///////////////////////////////////////////////////////////////
+		///// setar carrinho
+		Carrinho novoCarrinho = new Carrinho();
+
 		int op2 = Integer.valueOf(leitura.nextLine());
 
 		if (op2 == 1) {
 
 			System.out.println("Veiculo Cadastrado");
 			System.out.println();
-			//System.out.println("Você cadastrou um: " + modelo);
-			//System.out.println("Ano: " + ano);
+			// System.out.println("Você cadastrou um: " + modelo);
+			// System.out.println("Ano: " + ano);
 			System.out.println();
 		}
 		if (op2 == 2) {
@@ -150,8 +145,6 @@ public class SistemaMain {
 	}
 
 	public static void menuPrucura() {
-		
-		
 
 		Scanner leitura = new Scanner(System.in);
 
@@ -200,65 +193,70 @@ public class SistemaMain {
 			break;
 		}
 		case 6: {
-		for (Veiculo veiculos : veiculosDisponiveis) {
-			
-			System.out.println("Nome: ");
-			System.out.println(veiculos.getNome());
-			System.out.println("Modelo: ");
-			System.out.println(veiculos.getModelo());
-			System.out.println("Ano: ");
-			System.out.println(veiculos.getAno());
-			
-		}
+			for (Veiculo veiculos : veiculosDisponiveis) {
+
+				System.out.println("Nome:" + veiculos.getNome());
+
+				System.out.println("Modelo:" + veiculos.getModelo());
+
+				System.out.println("Ano:" + veiculos.getAno());
+
+				System.out.println();
+			}
 		}
 		}
 	}
 
 	public static void menuAlterar() {
 		Scanner leitura = new Scanner(System.in);
+		
+		Veiculo veiculo = new Veiculo();
+		
+		System.out.println("----- MENU ALTERAR VEÍCULO CADASTRADO -----");
+		System.out.println("1 - Alterar nome do veículo");
+		System.out.println("2 - Alterar modelo do veículo");
+		System.out.println("3 - Alterar ano do veículo");
+		System.out.println("4 - Voltar ao menu principal");
+		System.out.println();
 
-	    System.out.println("----- MENU ALTERAR VEÍCULO CADASTRADO -----");
-	    System.out.println("1 - Alterar nome do veículo");
-	    System.out.println("2 - Alterar modelo do veículo");
-	    System.out.println("3 - Alterar ano do veículo");
-	    System.out.println("4 - Voltar ao menu principal");
-	    System.out.println();
+		int op1 = Integer.valueOf(leitura.nextLine());
 
-	    int op1 = Integer.valueOf(leitura.nextLine());
-
-	    Veiculo veiculo = new Veiculo();
+		Veiculo veiculos = new Veiculo();
+		
 		switch (op1) {
-	        case 1:
-	            // Alterar nome do veículo
-	            System.out.print("Digite o novo nome do veículo: ");
-	            String novoNome = leitura.nextLine();
-	            veiculo.setNome(novoNome); // 'veiculo' representa o veículo que você deseja alterar
-	            System.out.println("Nome do veículo alterado com sucesso.");
-	            break;
-	        case 2:
-	            // Alterar modelo do veículo
-	            System.out.print("Digite o novo modelo do veículo: ");
-	            String novoModelo = leitura.nextLine();
-	            veiculo.setModelo(novoModelo); // 'veiculo' representa o veículo que você deseja alterar
-	            System.out.println("Modelo do veículo alterado com sucesso.");
-	            break;
-	        case 3:
-	            // Alterar ano do veículo
-	            System.out.print("Digite o novo ano do veículo: ");
-	            String novoAno = leitura.nextLine();
-	            veiculo.setAno(novoAno); // 'veiculo' representa o veículo que você deseja alterar
-	            System.out.println("Ano do veículo alterado com sucesso.");
-	            break;
-	        case 4:
-	            // Voltar ao menu principal
-	            break;
-	        default:
-	            System.out.println("Opção inválida. Por favor, escolha uma opção válida.");
-	            break;
-	    }
+		case 1:
+			// Alterar nome do veículo
+			System.out.print("Digite o novo nome do veículo: ");
+			String nome = leitura.nextLine();
+
+			veiculos.setNome(nome); // 'veiculo' representa o veículo que você deseja alterar
+
+			System.out.println("Nome do veículo alterado com sucesso.");
+			break;
+		case 2:
+			// Alterar modelo do veículo
+			System.out.print("Digite o novo modelo do veículo: ");
+			String modelo = leitura.nextLine();
+
+			veiculos.setModelo(modelo); // 'veiculo' representa o veículo que você deseja alterar
+
+			System.out.println("Modelo do veículo alterado com sucesso.");
+			break;
+		case 3:
+			// Alterar ano do veículo
+			System.out.print("Digite o novo ano do veículo: ");
+			String ano = leitura.nextLine();
+			veiculos.setAno(ano); // 'veiculo' representa o veículo que você deseja alterar
+			System.out.println("Ano do veículo alterado com sucesso.");
+			break;
+		case 4:
+			// Voltar ao menu principal
+			break;
+		default:
+			System.out.println("Opção inválida. Por favor, escolha uma opção válida.");
+			break;
+		}
 	}
-
-
 
 	// menu da bmw
 	public static void munuBmw() {
@@ -493,9 +491,7 @@ public class SistemaMain {
 			System.out.println("1 - sim");
 			System.out.println("2 - nao");
 			System.out.println();
-			
-			
-			
+
 			int nd = Integer.valueOf(leitura.nextLine());
 
 			if (nd == 1) {
