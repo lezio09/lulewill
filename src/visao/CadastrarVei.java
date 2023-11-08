@@ -1,4 +1,4 @@
-package lulewill;
+package visao;
 //Clase de cadastro dos veiculos
 public class CadastrarVei {
 	

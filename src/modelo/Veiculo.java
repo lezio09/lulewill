@@ -1,6 +1,6 @@
-package lulewill;
+package modelo;
 
-class Veiculo {
+public class Veiculo {
     private String modelo;
     private String ano;
     private String nome;

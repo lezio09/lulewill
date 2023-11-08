@@ -1,18 +1,19 @@
-package lulewill;
+package visao;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import controle.VeiculoDAO;
+import modelo.Veiculo;
+
 import java.util.List;
 
 public class SistemaMain {
-	static List<Veiculo> veiculosDisponiveis = new ArrayList<>();
+	static VeiculoDAO veiculoDAO = VeiculoDAO.getInstancia();
+	
 	static List<Veiculo> carrinho = new ArrayList<>();
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		Carrinho carrinho = new Carrinho();
-		Veiculo veiculo = new Veiculo();
-
 		Scanner leitura = new Scanner(System.in);
 
 		int op = 1;
@@ -28,7 +29,7 @@ public class SistemaMain {
 			System.out.println("4 - ACESSAR CARRINHO  ");
 			System.out.println("----------------------");
 			System.out.println();
-
+			
 			op = Integer.valueOf(leitura.nextLine());
 
 			switch (op) {
@@ -76,7 +77,7 @@ public class SistemaMain {
 		String ano = leitura.nextLine();
 		veiculo.setAno(ano);
 
-		veiculosDisponiveis.add(veiculo);
+		veiculoDAO.inserir(veiculo);
 
 		System.out.println();
 		System.out.println("Tem certeza que quer cadastrar o veiculo ?");
@@ -86,7 +87,7 @@ public class SistemaMain {
 
 		///////////////////////////////////////////////////////////////
 		///// setar carrinho
-		Carrinho novoCarrinho = new Carrinho();
+//		Carrinho novoCarrinho = new Carrinho();
 
 		int op2 = Integer.valueOf(leitura.nextLine());
 
@@ -154,8 +155,9 @@ public class SistemaMain {
 			break;
 		}
 		case 6: {
-			for(int i = 0; i < veiculosDisponiveis.size(); i++) {
-				Veiculo veiculo = veiculosDisponiveis.get(i);
+			ArrayList<Veiculo> veiculos = veiculoDAO.listarVeiculos();
+			for(int i = 0; i < veiculos.size(); i++) {
+				Veiculo veiculo = veiculos.get(i);
 				System.out.println((i+1)+" - "+veiculo);
 			}
 			System.out.println();
@@ -165,20 +167,17 @@ public class SistemaMain {
 
 	public static void menuAlterar() {
 		Scanner leitura = new Scanner(System.in);
+		ArrayList<Veiculo> veiculos = veiculoDAO.listarVeiculos();
 		
-		Veiculo veiculo = new Veiculo();
-		
-		
-
 	    System.out.println("----- MENU ALTERAR VEÍCULO CADASTRADO -----");
 	    System.out.println("Digite o número do veículo que deseja alterar:");
-	    for (int i = 0; i < veiculosDisponiveis.size(); i++) {
-	        System.out.println(i + " - " + veiculosDisponiveis.get(i).getNome());
+	    for (int i = 0; i < veiculos.size(); i++) {
+	        System.out.println(i + " - " + veiculos.get(i).getNome());
 	    }
 	    int op2 = Integer.valueOf(leitura.nextLine());
 
-	    if (op2 >= 0 && op2 < veiculosDisponiveis.size()) {
-	        Veiculo veiculoParaAlterar = veiculosDisponiveis.get(op2);
+	    if (op2 >= 0 && op2 < veiculos.size()) {
+	        Veiculo veiculoParaAlterar = veiculos.get(op2);
 	        
 	 
 	        // Agora você pode alterar o veículo selecionado (veiculoParaAlterar)
