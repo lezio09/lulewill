@@ -74,8 +74,12 @@ public class SistemaMain {
 		veiculo.setModelo(modelo);
 
 		System.out.print("Ano do veículo: ");
-		String ano = leitura.nextLine();
+		Integer ano = leitura.nextInt();
 		veiculo.setAno(ano);
+		
+		System.out.println("Informe o prwço do veículo: ");
+		Double preco = leitura.nextDouble();
+		veiculo.setPreco(preco);
 
 		veiculoDAO.inserir(veiculo);
 
@@ -184,10 +188,10 @@ public class SistemaMain {
 	        // Exemplo: Alterar o nome do veículo
 	        
 	        System.out.println("----- MENU ALTERAR VEÍCULO CADASTRADO -----");
-	        System.out.println("1 - Alterar nome do veículo");
+	        System.out.println("1 - Alterar nome do veículo  ");
 	        System.out.println("2 - Alterar modelo do veículo");
-	        System.out.println("3 - Alterar ano do veículo");
-			System.out.println("4 - Voltar ao menu principal");
+	        System.out.println("3 - Alterar ano do veículo   ");
+			System.out.println("4 - Voltar ao menu principal ");
 			System.out.println();
 	        
 			int op1 = Integer.valueOf(leitura.nextLine());
@@ -582,3 +586,4 @@ public class SistemaMain {
 
 	}
 }
+

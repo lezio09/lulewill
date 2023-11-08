@@ -2,13 +2,15 @@ package modelo;
 
 public class Veiculo {
     private String modelo;
-    private String ano;
+    private Integer ano;
     private String nome;
+    private Double preco;
 
-    public Veiculo(String nome, String modelo, String ano) {
+    public Veiculo(String nome, String modelo, Integer ano, Double preco) {
         this.nome = nome;
         this.modelo = modelo;
         this.ano = ano;
+        this.preco = preco;
   
         
     }
@@ -25,11 +27,11 @@ public class Veiculo {
         this.modelo = modelo;
     }
 
-    public String getAno() {
+    public Integer getAno() {
         return ano;
     }
 
-    public void setAno(String ano) {
+    public void setAno(Integer ano) {
         this.ano = ano;
     }
 
@@ -43,11 +45,19 @@ public class Veiculo {
 
     @Override
     public String toString() {
-        return nome.toUpperCase() + " " + modelo.toUpperCase() + " " + ano + " PREÇO: R$ " + "300.000";
+        return nome.toUpperCase() + " " + modelo.toUpperCase() + " " + ano + " PREÇO: R$ " + preco;
     }
 
 	public void setAno(int novoAno) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public Double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(Double preco) {
+		this.preco = preco;
 	}
 }
