@@ -19,12 +19,13 @@ public class SistemaMain {
 
 		while (op != 0) {
 
-			System.out.println("-----MENU EXEMPLO-----");
+			System.out.println("-----MENU PRINCIPAL-----");
 			System.out.println();
 			System.out.println("0 - SAIR DO PROGRAMA  ");
 			System.out.println("1 - CADASTRAR VEICULO ");
 			System.out.println("2 - PROUCURAR VEICULO ");
 			System.out.println("3 - ALTERAR PEDIDO    ");
+			System.out.println("4 - ACESSAR CARRINHO  ");
 			System.out.println("----------------------");
 			System.out.println();
 
@@ -153,16 +154,11 @@ public class SistemaMain {
 			break;
 		}
 		case 6: {
-			for (Veiculo veiculos : veiculosDisponiveis) {
-
-				System.out.println("Nome:" + veiculos.getNome());
-
-				System.out.println("Modelo:" + veiculos.getModelo());
-
-				System.out.println("Ano:" + veiculos.getAno());
-
-				System.out.println();
+			for(int i = 0; i < veiculosDisponiveis.size(); i++) {
+				Veiculo veiculo = veiculosDisponiveis.get(i);
+				System.out.println((i+1)+" - "+veiculo);
 			}
+			System.out.println();
 		}
 		}
 	}
