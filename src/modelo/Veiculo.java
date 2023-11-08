@@ -11,7 +11,8 @@ public class Veiculo {
 		this.modelo = modelo;
 		this.ano = ano;
 		this.preco = preco;
-	}
+	
+		}
 
 	public Veiculo() {
 		// TODO Auto-generated constructor stub

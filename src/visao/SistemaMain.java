@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import controle.VeiculoDAO;
+import ifsc.Desktop;
 import modelo.Carrinho;
 import modelo.Veiculo;
 
@@ -239,11 +240,21 @@ public class SistemaMain {
 	// menu da bmw
 	public static void munuBmw() {
 
+		Veiculo bmw1 = new veiculo();
+		bmw1.setNome("BMW Z4");
+		bmw1.setAno(2012);
+		bmw1.setPreco(850.000);
+		
+		veiculo.add(bmw1);
+		
+		
+		
+		
 		Scanner leitura = new Scanner(System.in);
 
 		System.out.println("-------------BMW-------------");
 		System.out.println();
-		System.out.println("1 - BMW Z4      PREÇO:R$ 850.000 ");
+		System.out.println("1 - BMW Z4  Ano:2012    PREÇO:R$ 850.000 ");
 		System.out.println("2 - BMW SERIE 4 PREÇO:R$ 925.000 ");
 		System.out.println("3 - BMW X2      PREÇO:R$ 500.000 ");
 		System.out.println("4 - VOLTAR AO MENU");
@@ -579,4 +590,7 @@ public class SistemaMain {
 		}
 
 	}
+	
+	
+
 }
