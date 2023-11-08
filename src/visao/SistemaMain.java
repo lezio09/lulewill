@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import controle.VeiculoDAO;
+import modelo.Carrinho;
 import modelo.Veiculo;
 
 import java.util.List;
 
 public class SistemaMain {
 	static VeiculoDAO veiculoDAO = VeiculoDAO.getInstancia();
-	
-	static List<Veiculo> carrinho = new ArrayList<>();
+	static Carrinho carrinho = new Carrinho();
 
 	public static void main(String[] args) {
 		Scanner leitura = new Scanner(System.in);

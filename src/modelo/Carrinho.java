@@ -3,7 +3,7 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-class Carrinho {
+public class Carrinho {
     private List<Veiculo> itens = new ArrayList<>();
 
     public void adicionarItem(Veiculo item) {
