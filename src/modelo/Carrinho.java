@@ -10,7 +10,7 @@ public class Carrinho {
         itens.add(item);
     }
 
-    public void removerItem(Veiculo item) {
+	public void removerItem(Veiculo item) {
         itens.remove(item);
     }
 
