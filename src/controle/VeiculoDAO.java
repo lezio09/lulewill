@@ -65,6 +65,51 @@ public class VeiculoDAO implements IVeiculoDAO {
 			tabelaVeiculos.add(bmw3);
 			
 		
+			
+			Veiculo GTRSupra = new Veiculo();
+			GTRSupra.setNome("GTR Supra");
+			GTRSupra.setAno(2020);
+			GTRSupra.setPreco(1.000000);
+			
+			tabelaVeiculos.add(GTRSupra);
+			
+			Veiculo GTRR35 = new Veiculo();
+			GTRR35.setNome("GTR r35");
+			GTRR35.setAno(2021);
+			GTRR35.setPreco(925.000);
+			
+			tabelaVeiculos.add(GTRR35);
+			
+			Veiculo GTRMax = new Veiculo();
+			GTRMax.setNome("Fiat Mobi");
+			GTRMax.setAno(2008);
+			GTRMax.setPreco(1.500000);
+			
+			tabelaVeiculos.add(GTRMax);
+
+			Veiculo FiatArgo = new Veiculo();
+			FiatArgo.setNome("Fiat Argo");
+			FiatArgo.setAno(2009);
+			FiatArgo.setPreco(80.000);
+			
+			tabelaVeiculos.add(FiatArgo);
+			
+			Veiculo FiatDoblo = new Veiculo();
+			FiatDoblo.setNome("Fiat Doblo");
+			FiatDoblo.setAno(2008);
+			FiatDoblo.setPreco(25.000);
+			
+			tabelaVeiculos.add(FiatDoblo);
+			
+			Veiculo FiatMobi = new Veiculo();
+			FiatMobi.setNome("Fiat Mobi");
+			FiatMobi.setAno(2008);
+			FiatMobi.setPreco(90.000);
+			
+			tabelaVeiculos.add(FiatMobi);
+			
+
+
 		}
 
 		return instancia;
