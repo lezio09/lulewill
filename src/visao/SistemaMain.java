@@ -4,11 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import controle.VeiculoDAO;
-import ifsc.Desktop;
 import modelo.Carrinho;
 import modelo.Veiculo;
-
-import java.util.List;
 
 public class SistemaMain {
 	static VeiculoDAO veiculoDAO = VeiculoDAO.getInstancia();
@@ -240,12 +237,6 @@ public class SistemaMain {
 	// menu da bmw
 	public static void munuBmw() {
 
-		Veiculo bmw1 = new veiculo();
-		bmw1.setNome("BMW Z4");
-		bmw1.setAno(2012);
-		bmw1.setPreco(850.000);
-		
-		veiculo.add(bmw1);
 		
 		
 		
@@ -254,9 +245,9 @@ public class SistemaMain {
 
 		System.out.println("-------------BMW-------------");
 		System.out.println();
-		System.out.println("1 - BMW Z4  Ano:2012    PREÇO:R$ 850.000 ");
-		System.out.println("2 - BMW SERIE 4 PREÇO:R$ 925.000 ");
-		System.out.println("3 - BMW X2      PREÇO:R$ 500.000 ");
+		System.out.println("1 - BMW Z4       Ano:201   PREÇO:R$ 850.000 ");
+		System.out.println("2 - BMW SERIE 4  Ano:2010  PREÇO:R$ 925.000 ");
+		System.out.println("3 - BMW X2       Ano:2015  PREÇO:R$ 500.000 ");
 		System.out.println("4 - VOLTAR AO MENU");
 		System.out.println();
 
@@ -336,12 +327,13 @@ public class SistemaMain {
 	public static void munuBugatti() {
 
 		Scanner leitura = new Scanner(System.in);
-
+		
+		
 		System.out.println("-------------Bugatti-------------");
 		System.out.println();
-		System.out.println("1 - Bugatti Chiron     PREÇO:R$ 950.000     ");
-		System.out.println("2 - Bugatti Veyron 	   PREÇO:R$ 1.425.000   ");
-		System.out.println("3 - Bugatti Centodieci PREÇO:R$ 1.840.000   ");
+		System.out.println("1 - Bugatti Chiron     Ano:2010     PREÇO:R$ 950.000     ");
+		System.out.println("2 - Bugatti Veyron     Ano:2006     PREÇO:R$ 1.425.000   ");
+		System.out.println("3 - Bugatti Centodieci Ano:2009     PREÇO:R$ 1.840.000   ");
 		System.out.println("4 - VOLTAR AO MENU");
 		System.out.println();
 
