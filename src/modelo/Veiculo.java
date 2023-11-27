@@ -49,7 +49,7 @@ public class Veiculo {
 
 	public void setAno(int novoAno) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	public Double getPreco() {

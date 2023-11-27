@@ -65,12 +65,13 @@ public class SistemaMain {
 		Veiculo veiculo = new Veiculo();
 
 		System.out.print("Nome do veículo: ");
-		String nome = leitura.nextLine();
+		String nome = String.valueOf(leitura.nextLine());
 		veiculo.setNome(nome);
+		
 		System.out.print("Modelo do veículo: ");
-		String modelo = leitura.nextLine();
+		String modelo = String.valueOf(leitura.nextLine());
 		veiculo.setModelo(modelo);
-
+		
 		System.out.print("Ano do veículo: ");
 		Integer ano = Integer.valueOf(leitura.nextLine());
 		veiculo.setAno(ano);
@@ -255,25 +256,42 @@ public class SistemaMain {
 
 		// clase para o carrinho
 		if (op3 == 1) {
-			System.out.println("Voce deseja add BMW Z4 ou carrinho ?");
-			System.out.println("1 - sim");
-			System.out.println("2 - nao");
-			System.out.println();
+			if (op3 == 1) {
+			    System.out.println("Você deseja adicionar BMW Z4 ao carrinho?");
+			    System.out.println("1 - Sim");
+			    System.out.println("2 - Não");
 
-			int nd = Integer.valueOf(leitura.nextLine());
+			    int nd = Integer.valueOf(leitura.nextLine());
 
-			if (nd == 1) {
-				System.out.println("Produto adicionado");
-				System.out.println();
-				munuBmw();
+			    if (nd == 1) {
+			        // Exibindo os veículos disponíveis para o usuário escolher
+			        for (int i = 0; i < tabelaVeiculos.size(); i++) {
+			            System.out.println((i + 1) + " - " + tabelaVeiculos.get(i).getNome());
+			        }
 
+			        // Solicitando que o usuário escolha um veículo
+			        System.out.println("Escolha um veículo:");
+			        int escolhaVeiculo = Integer.valueOf(leitura.nextLine());
+
+			        // Verificando se a escolha do usuário é válida
+			        if (escolhaVeiculo >= 1 && escolhaVeiculo <= tabelaVeiculos.size()) {
+			            // Obtendo o veículo selecionado
+			            Veiculo veiculoSelecionado = tabelaVeiculos.get(escolhaVeiculo - 1);
+
+			            // Adicionando o veículo ao carrinho
+			            carrinho.adicionarItem(veiculoSelecionado);
+
+			            System.out.println("Produto adicionado ao carrinho");
+			            System.out.println();
+			            munuBmw();
+			        } else {
+			            System.out.println("Escolha inválida. Tente novamente.");
+			            munuBmw();
+			        }
+			    } else {
+			        munuBmw();
+			    }
 			}
-
-			if (nd == 2) {
-				munuBmw();
-			}
-
-		}
 
 		if (op3 == 2) {
 
@@ -285,304 +303,305 @@ public class SistemaMain {
 			int nd = Integer.valueOf(leitura.nextLine());
 
 			if (nd == 1) {
-				System.out.println("Produto adicionado");
-				System.out.println();
-				munuBmw();
-			}
-
-			if (nd == 2) {
-				munuBmw();
-			}
-
-		}
-		if (op3 == 3) {
-
-			System.out.println("Voce deseja add BMW X2 ou carrinho ?");
-			System.out.println("1 - sim");
-			System.out.println("2 - nao");
-			System.out.println();
-
-			int nd = Integer.valueOf(leitura.nextLine());
-
-			if (nd == 1) {
-				System.out.println("Produto adicionado");
-				System.out.println();
-			}
-
-			if (nd == 2) {
-				munuBmw();
+				System.out.println("Produto adicionado ao carrinho");
+			    carrinho.adicionarItem(BMWSERIE4);
+			    System.out.println();
+			    munuBmw();
 			}
 
 		}
 
-		if (op3 == 4) {
-			System.out.println("Voltando ao menu");
-			System.out.println();
-			menuPrucura();
+		if (nd == 2) {
+			munuBmw();
 		}
+
+	}
+	if (op3 == 3) {
+
+		System.out.println("Voce deseja add BMW X2 ou carrinho ?");
+		System.out.println("1 - sim");
+		System.out.println("2 - nao");
+		System.out.println();
+
+		int nd = Integer.valueOf(leitura.nextLine());
+
+		if (nd == 1) {
+			System.out.println("Produto adicionado ao carrinho");
+		    carrinho.adicionarItem(BMWX2);
+		    System.out.println();
+		    munuBmw();
+		}
+
+		if (nd == 2) {
+			munuBmw();
+		}
+
+	}
+
+	if (op3 == 4) {
+		System.out.println("Voltando ao menu");
+		System.out.println();
+		menuPrucura();
+	}
 
 	}
 
 	// menu Bugatti
 	public static void munuBugatti() {
 
-		Scanner leitura = new Scanner(System.in);
-		
-		
-		System.out.println("-------------Bugatti-------------");
+	Scanner leitura = new Scanner(System.in);
+
+
+	System.out.println("-------------Bugatti-------------");
+	System.out.println();
+	System.out.println("1 - Bugatti Chiron     Ano:2010     PREÇO:R$ 950.000     ");
+	System.out.println("2 - Bugatti Veyron     Ano:2006     PREÇO:R$ 1.425.000   ");
+	System.out.println("3 - Bugatti Centodieci Ano:2009     PREÇO:R$ 1.840.000   ");
+	System.out.println("4 - VOLTAR AO MENU");
+	System.out.println();
+
+	int op3 = Integer.valueOf(leitura.nextLine());
+
+	// clase para o carrinho
+	if (op3 == 1) {
+		System.out.println("Voce deseja add Bugatti Chiron ao carrinho ?");
+		System.out.println("1 - sim");
+		System.out.println("2 - nao");
 		System.out.println();
-		System.out.println("1 - Bugatti Chiron     Ano:2010     PREÇO:R$ 950.000     ");
-		System.out.println("2 - Bugatti Veyron     Ano:2006     PREÇO:R$ 1.425.000   ");
-		System.out.println("3 - Bugatti Centodieci Ano:2009     PREÇO:R$ 1.840.000   ");
-		System.out.println("4 - VOLTAR AO MENU");
+
+		int nd = Integer.valueOf(leitura.nextLine());
+
+		if (nd == 1) {
+			System.out.println("Produto adicionado ao carrinho");
+		    carrinho.adicionarItem(BugattiChiron);
+		    System.out.println();
+		    munuBugatti();
+		}
+
+		if (nd == 2) {
+			munuBugatti();
+		}
+
+	}
+
+	if (op3 == 2) {
+
+		System.out.println("Voce deseja add Bugatti Veyron ao carrinho ?");
+		System.out.println("1 - sim");
+		System.out.println("2 - nao");
 		System.out.println();
 
-		int op3 = Integer.valueOf(leitura.nextLine());
+		int nd = Integer.valueOf(leitura.nextLine());
 
-		// clase para o carrinho
-		if (op3 == 1) {
-			System.out.println("Voce deseja add Bugatti Chiron ao carrinho ?");
-			System.out.println("1 - sim");
-			System.out.println("2 - nao");
-			System.out.println();
-
-			int nd = Integer.valueOf(leitura.nextLine());
-
-			if (nd == 1) {
-				System.out.println("Produto adicionado");
-				System.out.println();
-				munuBugatti();
-			}
-
-			if (nd == 2) {
-				munuBugatti();
-			}
-
+		if (nd == 1) {
+			System.out.println("Produto adicionado ao carrinho");
+		    carrinho.adicionarItem(BugattiVeyron);
+		    System.out.println();
+		    munuBugatti();
 		}
 
-		if (op3 == 2) {
-
-			System.out.println("Voce deseja add Bugatti Veyron ao carrinho ?");
-			System.out.println("1 - sim");
-			System.out.println("2 - nao");
-			System.out.println();
-
-			int nd = Integer.valueOf(leitura.nextLine());
-
-			if (nd == 1) {
-				System.out.println("Produto adicionado");
-				System.out.println();
-				munuBugatti();
-			}
-
-			if (nd == 2) {
-				munuBugatti();
-			}
-
-		}
-		if (op3 == 3) {
-
-			System.out.println("Voce deseja add Bugatti Centodieci ao carrinho ?");
-			System.out.println("1 - sim");
-			System.out.println("2 - nao");
-			System.out.println();
-
-			int nd = Integer.valueOf(leitura.nextLine());
-
-			if (nd == 1) {
-				System.out.println("Produto adicionado");
-				System.out.println();
-				munuBugatti();
-			}
-
-			if (nd == 2) {
-				munuBugatti();
-			}
-
+		if (nd == 2) {
+			munuBugatti();
 		}
 
-		if (op3 == 4) {
-			System.out.println("Voltando ao menu");
-			System.out.println();
-			menuPrucura();
+	}
+	if (op3 == 3) {
+
+		System.out.println("Voce deseja add Bugatti Centodieci ao carrinho ?");
+		System.out.println("1 - sim");
+		System.out.println("2 - nao");
+		System.out.println();
+
+		int nd = Integer.valueOf(leitura.nextLine());
+
+		if (nd == 1) {
+			System.out.println("Produto adicionado ao carrinho");
+		    carrinho.adicionarItem(BugattiCentodieci);
+		    System.out.println();
+		    munuBugatti();
 		}
+
+		if (nd == 2) {
+			munuBugatti();
+		}
+
+	}
+
+	if (op3 == 4) {
+		System.out.println("Voltando ao menu");
+		System.out.println();
+		menuPrucura();
+	}
 
 	}
 
 	public static void munuFiat() {
 
-		Scanner leitura = new Scanner(System.in);
+	Scanner leitura = new Scanner(System.in);
 
-		System.out.println("-------------Fiat-------------");
+	System.out.println("-------------Fiat-------------");
+	System.out.println();
+	System.out.println("1 - Fiat Argo   PREÇO:R$ 80.000 ");
+	System.out.println("2 - Fiat Doblo  PREÇO:R$ 25.000 ");
+	System.out.println("3 - Fiat Mobi   PREÇO:R$ 90.000 ");
+	System.out.println("4 - VOLTAR AO MENU");
+	System.out.println();
+
+	int op3 = Integer.valueOf(leitura.nextLine());
+
+	// clase para o carrinho
+	if (op3 == 1) {
+		System.out.println("Voce deseja add Fiat Argo ao carrinho ?");
+		System.out.println("1 - sim");
+		System.out.println("2 - nao");
 		System.out.println();
-		System.out.println("1 - Fiat Argo   PREÇO:R$ 80.000 ");
-		System.out.println("2 - Fiat Doblo  PREÇO:R$ 25.000 ");
-		System.out.println("3 - Fiat Mobi   PREÇO:R$ 90.000 ");
-		System.out.println("4 - VOLTAR AO MENU");
+
+		int nd = Integer.valueOf(leitura.nextLine());
+
+		if (nd == 1) {
+			System.out.println("Produto adicionado ao carrinho");
+		    carrinho.adicionarItem(FiatArgo);
+		    System.out.println();
+		    munuFiat();
+
+		}
+
+		if (nd == 2) {
+			munuFiat();
+		}
+
+	}
+
+	if (op3 == 2) {
+
+		System.out.println("Voce deseja add Fiat Doblo ao carrinho ?");
+		System.out.println("1 - sim");
+		System.out.println("2 - nao");
 		System.out.println();
 
-		int op3 = Integer.valueOf(leitura.nextLine());
+		int nd = Integer.valueOf(leitura.nextLine());
 
-		// clase para o carrinho
-		if (op3 == 1) {
-			System.out.println("Voce deseja add Fiat Argo ao carrinho ?");
-			System.out.println("1 - sim");
-			System.out.println("2 - nao");
-			System.out.println();
+		if (nd == 1) {
+			System.out.println("Produto adicionado ao carrinho");
+		    carrinho.adicionarItem(FiatDoblo);
+		    System.out.println();
+		    munuFiat();
+		}
 
-			int nd = Integer.valueOf(leitura.nextLine());
-
-			if (nd == 1) {
-				System.out.println("Produto adicionado");
-				System.out.println();
-				munuFiat();
-
-			}
-
-			if (nd == 2) {
-				munuFiat();
-			}
+		if (nd == 2) {
+			munuFiat();
 
 		}
 
-		if (op3 == 2) {
+	}
+	if (op3 == 3) {
 
-			System.out.println("Voce deseja add Fiat Doblo ao carrinho ?");
-			System.out.println("1 - sim");
-			System.out.println("2 - nao");
-			System.out.println();
+		System.out.println("Voce deseja add Fiat Mobi ao carrinho ?");
+		System.out.println("1 - sim");
+		System.out.println("2 - nao");
+		System.out.println();
 
-			int nd = Integer.valueOf(leitura.nextLine());
+		int nd = Integer.valueOf(leitura.nextLine());
 
-			if (nd == 1) {
-				System.out.println("Produto adicionado");
-				System.out.println();
-				munuFiat();
-			}
-
-			if (nd == 2) {
-				munuFiat();
-
-			}
-
-		}
-		if (op3 == 3) {
-
-			System.out.println("Voce deseja add Fiat Mobi ao carrinho ?");
-			System.out.println("1 - sim");
-			System.out.println("2 - nao");
-			System.out.println();
-
-			int nd = Integer.valueOf(leitura.nextLine());
-
-			if (nd == 1) {
-				System.out.println("Produto adicionado");
-				System.out.println();
-				munuFiat();
-			}
-
-			if (nd == 2) {
-				munuFiat();
-			}
-
+		if (nd == 1) {
+			System.out.println("Produto adicionado ao carrinho");
+		    carrinho.adicionarItem(FiatMobi);
+		    System.out.println();
+		    munuFiat();
 		}
 
-		if (op3 == 4) {
-			System.out.println("Voltando ao menu");
-			System.out.println();
-			menuPrucura();
-
+		if (nd == 2) {
+			munuFiat();
 		}
+
+	}
+
+	if (op3 == 4) {
+		System.out.println("Voltando ao menu");
+		System.out.println();
+		menuPrucura();
+
+	}
 
 	}
 
 	public static void munuGtr() {
 
-		Scanner leitura = new Scanner(System.in);
+	Scanner leitura = new Scanner(System.in);
 
-		System.out.println("-------------GTR-------------");
+	System.out.println("-------------GTR-------------");
+	System.out.println();
+	System.out.println("1 - GTR Supra   PREÇO:R$ 1.000.000 ");
+	System.out.println("2 - GTR r35     PREÇO:R$ 925.000   ");
+	System.out.println("3 - GTR max     PREÇO:R$ 1.500.000 ");
+	System.out.println("4 - VOLTAR AO MENU");
+	System.out.println();
+
+	int op3 = Integer.valueOf(leitura.nextLine());
+
+	// clase para o carrinho
+	if (op3 == 1) {
+		System.out.println("Voce deseja add GTR Supra ao carrinho ?");
+		System.out.println("1 - sim");
+		System.out.println("2 - nao");
 		System.out.println();
-		System.out.println("1 - GTR Supra   PREÇO:R$ 1.000.000 ");
-		System.out.println("2 - GTR r35     PREÇO:R$ 925.000   ");
-		System.out.println("3 - GTR max     PREÇO:R$ 1.500.000 ");
-		System.out.println("4 - VOLTAR AO MENU");
-		System.out.println();
 
-		int op3 = Integer.valueOf(leitura.nextLine());
+		int nd = Integer.valueOf(leitura.nextLine());
 
-		// clase para o carrinho
-		if (op3 == 1) {
-			System.out.println("Voce deseja add GTR Supra ao carrinho ?");
-			System.out.println("1 - sim");
-			System.out.println("2 - nao");
-			System.out.println();
-
-			int nd = Integer.valueOf(leitura.nextLine());
-
-			if (nd == 1) {
-				System.out.println("Produto adicionado");
-				System.out.println();
-				munuGtr();
-
-			}
-
-			if (nd == 2) {
-				munuGtr();
-			}
+		if (nd == 1) {
+			System.out.println("Produto adicionado ao carrinho");
+		    carrinho.adicionarItem(GTRSupra);
+		    System.out.println();
+			munuGtr();
 
 		}
 
-		if (op3 == 2) {
-
-			System.out.println("Voce deseja add GTR r35 ao carrinho ?");
-			System.out.println("1 - sim");
-			System.out.println("2 - nao");
-			System.out.println();
-
-			int nd = Integer.valueOf(leitura.nextLine());
-
-			if (nd == 1) {
-				System.out.println("Produto adicionado");
-				System.out.println();
-
-				munuGtr();
-			}
-
-			if (nd == 2) {
-				munuGtr();
-			}
-
-		}
-		if (op3 == 3) {
-
-			System.out.println("Voce deseja add GTR max ao carrinho ?");
-			System.out.println("1 - sim");
-			System.out.println("2 - nao");
-			System.out.println();
-
-			int nd = Integer.valueOf(leitura.nextLine());
-
-			if (nd == 1) {
-				System.out.println("Produto adicionado");
-				System.out.println();
-				munuGtr();
-			}
-
-			if (nd == 2) {
-				munuGtr();
-			}
-
-		}
-
-		if (op3 == 4) {
-			System.out.println("Voltando ao menu");
-			System.out.println();
-			menuPrucura();
-
+		if (nd == 2) {
+			munuGtr();
 		}
 
 	}
-	
-	
 
+	if (op3 == 2) {
+
+		System.out.println("Voce deseja add GTR r35 ao carrinho ?");
+		System.out.println("1 - sim");
+		System.out.println("2 - nao");
+		System.out.println();
+
+		int nd = Integer.valueOf(leitura.nextLine());
+
+		if (nd == 1) {
+			System.out.println("Produto adicionado ao carrinho");
+		    carrinho.adicionarItem(GTRR35);
+		    System.out.println();
+			munuGtr();
+		}
+
+		if (nd == 2) {
+			munuGtr();
+		}
+
+	}
+	if (op3 == 3) {
+
+		System.out.println("Voce deseja add GTR max ao carrinho ?");
+		System.out.println("1 - sim");
+		System.out.println("2 - nao");
+		System.out.println();
+
+		int nd = Integer.valueOf(leitura.nextLine());
+
+		if (nd == 1) {
+			System.out.println("Produto adicionado ao carrinho");
+		    carrinho.adicionarItem(GTRMax);
+		    System.out.println();
+			munuGtr();
+			
+			
+			
+		}
+
+	}
+	}
 }

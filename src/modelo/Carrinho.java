@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Carrinho {
-    private List<Veiculo> itens = new ArrayList<>();
+  
+	private List<Veiculo> itens = new ArrayList<>();
 
     public void adicionarItem(Veiculo item) {
         itens.add(item);
