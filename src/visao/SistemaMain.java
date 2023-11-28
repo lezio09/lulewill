@@ -1,6 +1,7 @@
 package visao;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import controle.VeiculoDAO;
@@ -53,9 +54,11 @@ public class SistemaMain {
 
 			case 3: {
 				menuAlterar();
+				break;
 			}
 			case 4: {
-
+				menuCarrinho();
+				break;
 			}
 			}
 		}
@@ -89,8 +92,6 @@ public class SistemaMain {
 		System.out.println("2 - Nao");
 		System.out.println();
 
-		///////////////////////////////////////////////////////////////
-		///// setar carrinho
 //		Carrinho novoCarrinho = new Carrinho();
 
 		int op2 = Integer.valueOf(leitura.nextLine());
@@ -103,6 +104,7 @@ public class SistemaMain {
 			// System.out.println("Você cadastrou um: " + modelo);
 			// System.out.println("Ano: " + ano);
 			System.out.println();
+
 		}
 		if (op2 == 2) {
 			System.out.println("Saindo");
@@ -119,9 +121,8 @@ public class SistemaMain {
 		System.out.println();
 		System.out.println("Marcas de veiculos disponiveis");
 		System.out.println();
-		System.out.println("1 - Voltar ao Menu ");
-		System.out.println("2 - Menu de Procura    ");
-		System.out.println("3 - veiculo cadastrado");
+		System.out.println("1 - Menu de Procura ");
+		System.out.println("2 - Voltar ao Menu  ");
 		// Add modelo cadastrado
 		System.out.println();
 
@@ -130,7 +131,7 @@ public class SistemaMain {
 		switch (op2) {
 
 		case 1: {
-
+			munu2Procura();
 			// quando finalizar colocar uma fincao
 			break;
 
@@ -138,23 +139,14 @@ public class SistemaMain {
 
 		case 2: {
 
-			munu2Procura();
 			break;
 		}
 
-		case 3: {
-			ArrayList<Veiculo> veiculos = veiculoDAO.listarVeiculos();
-
-			for (int i = 0; i < veiculos.size(); i++) {
-				Veiculo veiculo = veiculos.get(i);
-				System.out.println((i + 1) + " - " + veiculo);
-			}
-			System.out.println();
-		}
 		}
 	}
 
 	public static void menuAlterar() {
+		
 		Scanner leitura = new Scanner(System.in);
 		ArrayList<Veiculo> veiculos = veiculoDAO.listarVeiculos();
 
@@ -175,7 +167,6 @@ public class SistemaMain {
 			System.out.println("1 - Alterar nome do veículo:   ");
 			System.out.println("2 - Alterar modelo do veículo: ");
 			System.out.println("3 - Alterar ano do veículo:    ");
-			System.out.println("4 - Alterar preço:             ");
 			System.out.println("4 - Voltar ao menu principal:  ");
 			System.out.println();
 
@@ -210,7 +201,7 @@ public class SistemaMain {
 
 			}
 			case 4: {
-				// Voltar ao menu principal
+
 				break;
 			}
 			}
@@ -236,52 +227,122 @@ public class SistemaMain {
 
 		// clase para o carrinho
 		if (op3 == 1) {
-			if (op3 == 1) {
 
-				System.out.println("Entrar nos Veiculos?");
-				System.out.println("1 - Sim");
-				System.out.println("2 - Não");
-
-				int nd = Integer.valueOf(leitura.nextLine());
-
-				if (nd == 1) {
-					// Exibindo os veículos disponíveis para o usuário escolher
-					for (int i = 0; i < veiculoDAO.listarVeiculos().size(); i++) {
-						System.out.println((i + 1) + " - " + veiculoDAO.listarVeiculos().get(i).getNome());
-					}
-
-					// Solicitando que o usuário escolha um veículo
-					System.out.println("Escolha um veículo:");
-					int escolhaVeiculo = Integer.valueOf(leitura.nextLine());
-
-					// Verificando se a escolha do usuário é válida
-					if (escolhaVeiculo >= 1 && escolhaVeiculo <= veiculoDAO.listarVeiculos().size()) {
-						// Obtendo o veículo selecionado
-						Veiculo veiculoSelecionado = veiculoDAO.listarVeiculos().get(escolhaVeiculo - 1);
-
-						// Adicionando o veículo ao carrinho
-
-						System.out.println("Produto adicionado ao carrinho");
-						System.out.println();
-						carrinho.adicionarItem(veiculoSelecionado);
-					} else {
-						System.out.println("Escolha inválida. Tente novamente.");
-						munu2Procura();
-					}
-				} else {
-					munu2Procura();
-				}
+			// Exibindo os veículos disponíveis para o usuário escolher
+			for (int i = 0; i < veiculoDAO.listarVeiculos().size(); i++) {
+				Veiculo veiculo = veiculoDAO.listarVeiculos().get(i);
+				System.out.println((i + 1) + " - " + veiculo.getNome() + " | Ano: " + veiculo.getAno() + " | Preço: R$ "
+						+ veiculo.getPreco());
 			}
 
-			if (op3 == 2) {
-				System.out.println("Voltando ao menu");
+			// Solicitando que o usuário escolha um veículo
+			System.out.println("Escolha um veículo:");
+			int escolhaVeiculo = Integer.valueOf(leitura.nextLine());
+
+			// Verificando se a escolha do usuário é válida
+			if (escolhaVeiculo >= 1 && escolhaVeiculo <= veiculoDAO.listarVeiculos().size()) {
+				// Obtendo o veículo selecionado
+				Veiculo veiculoSelecionado = veiculoDAO.listarVeiculos().get(escolhaVeiculo - 1);
+
+				// Adicionando o veículo ao carrinho
+
+				System.out.println("Produto adicionado ao carrinho");
 				System.out.println();
-				menuPrucura();
+				carrinho.adicionarItem(veiculoSelecionado);
+			} else {
+				System.out.println("Escolha inválida. Tente novamente.");
+				munu2Procura();
 			}
-
+		} else {
+			munu2Procura();
 		}
 
-		// menu Bugatti
+		if (op3 == 2) {
+			System.out.println("Voltando ao menu");
+			System.out.println();
+			menuPrucura();
+		}
 
 	}
+
+	public static void menuCarrinho() {
+
+		Scanner leitura = new Scanner(System.in);
+
+		System.out.println("----- CARRINHO -----");
+		System.out.println("1 - Visualizar Itens do Carrinho");
+		System.out.println("2 - Remover Item do Carrinho");
+		System.out.println("3 - Voltar ao Menu Principal");
+		System.out.println();
+
+		int opCarrinho = Integer.valueOf(leitura.nextLine());
+
+		switch (opCarrinho) {
+		case 1: {
+			visualizarItensCarrinho();
+			break;
+		}
+		case 2: {
+			removerItemCarrinho();
+			break;
+		}
+		case 3: {
+			// Voltar ao menu principal
+			break;
+		}
+		default: {
+			System.out.println("Opção inválida.");
+		}
+		}
+	}
+
+	public static void visualizarItensCarrinho() {
+
+		List<Veiculo> itensCarrinho = carrinho.getItens();
+
+		if (itensCarrinho.isEmpty()) {
+			System.out.println("O carrinho está vazio.");
+		} else {
+			System.out.println("----- ITENS DO CARRINHO -----");
+			for (int i = 0; i < itensCarrinho.size(); i++) {
+				Veiculo veiculo = itensCarrinho.get(i);
+				System.out.println((i + 1) + " - " + veiculo.getNome() + " | Ano: " + veiculo.getAno() + " | Preço: R$ "
+						+ veiculo.getPreco());
+			}
+			System.out.println();
+		}
+	}
+
+	public static void removerItemCarrinho() {
+		Scanner leitura = new Scanner(System.in);
+
+		List<Veiculo> itensCarrinho = carrinho.getItens();
+
+		if (itensCarrinho.isEmpty()) {
+			System.out.println("O carrinho está vazio.");
+			return;
+		}
+
+		// Exibir itens do carrinho
+		System.out.println("----- ITENS DO CARRINHO -----");
+		for (int i = 0; i < itensCarrinho.size(); i++) {
+			Veiculo veiculo = itensCarrinho.get(i);
+			System.out.println((i + 1) + " - " + veiculo.getNome() + " | Ano: " + veiculo.getAno() + " | Preço: R$ "
+					+ veiculo.getPreco());
+		}
+
+		System.out.println("Escolha o número do item que deseja remover:");
+		int escolhaItem = Integer.valueOf(leitura.nextLine());
+
+		if (escolhaItem >= 1 && escolhaItem <= itensCarrinho.size()) {
+			// Remover o item escolhido do carrinho
+			Veiculo itemRemover = itensCarrinho.get(escolhaItem - 1);
+			carrinho.removerItem(itemRemover);
+			System.out.println("Item removido do carrinho.");
+		} else {
+			System.out.println("Escolha inválida. Tente novamente.");
+			removerItemCarrinho();
+		}
+	}
+
 }
