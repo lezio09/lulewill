@@ -54,8 +54,8 @@ public class SistemaMain {
 			case 3: {
 				menuAlterar();
 			}
-			case 4:{
-				
+			case 4: {
+
 			}
 			}
 		}
@@ -237,6 +237,7 @@ public class SistemaMain {
 		// clase para o carrinho
 		if (op3 == 1) {
 			if (op3 == 1) {
+
 				System.out.println("Entrar nos Veiculos?");
 				System.out.println("1 - Sim");
 				System.out.println("2 - Não");
@@ -259,7 +260,7 @@ public class SistemaMain {
 						Veiculo veiculoSelecionado = veiculoDAO.listarVeiculos().get(escolhaVeiculo - 1);
 
 						// Adicionando o veículo ao carrinho
-						
+
 						System.out.println("Produto adicionado ao carrinho");
 						System.out.println();
 						carrinho.adicionarItem(veiculoSelecionado);
@@ -272,18 +273,15 @@ public class SistemaMain {
 				}
 			}
 
-		
-	
+			if (op3 == 2) {
+				System.out.println("Voltando ao menu");
+				System.out.println();
+				menuPrucura();
+			}
 
-		if (op3 == 2) {
-			System.out.println("Voltando ao menu");
-			System.out.println();
-			menuPrucura();
 		}
 
-	}
+		// menu Bugatti
 
-	// menu Bugatti
-	
-}
+	}
 }
