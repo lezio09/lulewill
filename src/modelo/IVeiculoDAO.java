@@ -3,6 +3,8 @@ package modelo;
 import java.util.ArrayList;
 
 public interface IVeiculoDAO {
+	
+
 	public boolean inserir(Veiculo v);
 	
 
@@ -11,6 +13,12 @@ public interface IVeiculoDAO {
 	public boolean excluir(Veiculo v );
 	
 	public ArrayList<Veiculo> listarVeiculos();
+
+
+	public void visualizarCarrinho();
+
+
+	public boolean removerDoCarrinho(Veiculo veiculoRemover);
 
 }
 

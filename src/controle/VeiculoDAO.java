@@ -1,19 +1,24 @@
 package controle;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import modelo.IVeiculoDAO;
 import modelo.Veiculo;
 
+@SuppressWarnings("unused")
 public class VeiculoDAO implements IVeiculoDAO {
 
 	private static ArrayList<Veiculo> tabelaVeiculos;
 	private static VeiculoDAO instancia;
+    private static ArrayList<Veiculo> carrinho;
 	private IVeiculoDAO veiculoDAO;
 
 	
 	private VeiculoDAO() {
+		 tabelaVeiculos = new ArrayList<>();
+	     carrinho = new ArrayList<>();
 	}
 
 	public static VeiculoDAO getInstancia() {
@@ -115,17 +120,17 @@ public class VeiculoDAO implements IVeiculoDAO {
 	@SuppressWarnings("resource")
 	@Override
 	public boolean inserir(Veiculo v) {
+				
+		 boolean inserido = tabelaVeiculos.add(v);
+	        if (inserido) {
+	            carrinho.add(v);
+	            System.out.println("Veículo adicionado ao carrinho.");
+	        } else {
+	            System.out.println("Erro ao adicionar veículo ao carrinho.");
+	        }
+	        return inserido;
+	    
 		
-		ArrayList<Veiculo> veiculos = veiculoDAO.listarVeiculos();
-		
-		System.out.println("----- MENU ALTERAR VEÍCULO CADASTRADO -----");
-		System.out.println("Digite o número do veículo que deseja alterar:");
-		for (int i = 0; i < veiculos.size(); i++) {
-			System.out.println(i + " - " + veiculos.get(i).getNome());
-		}
-		
-		
-		return tabelaVeiculos.add(v);
 	}
 
 	@SuppressWarnings("resource")
@@ -134,6 +139,8 @@ public class VeiculoDAO implements IVeiculoDAO {
 		
 		ArrayList<Veiculo> veiculos = veiculoDAO.listarVeiculos();
 
+		System.out.println("----- MENU ALTERAR VEÍCULO CADASTRADO -----");
+		System.out.println("Digite o número do veículo que deseja alterar:");
 		for (int i = 0; i < veiculos.size(); i++) {
 			System.out.println(i + " - " + veiculos.get(i).getNome());
 		}
@@ -143,6 +150,28 @@ public class VeiculoDAO implements IVeiculoDAO {
 
 	@Override
 	public boolean excluir(Veiculo v) {
+		
+		System.out.println("----- REMOVER DO CARRINHO -----");
+        veiculoDAO.visualizarCarrinho();
+
+        System.out.print("Digite o número do veículo que deseja remover do carrinho: ");
+       
+
+        @SuppressWarnings("null")
+		int indice = (Integer) null;
+		if (indice >= 0 && indice < veiculoDAO.listarVeiculos().size()) {
+            Veiculo veiculoRemover = veiculoDAO.listarVeiculos().get(indice);
+            if (veiculoDAO.removerDoCarrinho(veiculoRemover)) {
+                System.out.println("Veículo removido do carrinho com sucesso!");
+            } else {
+                System.out.println("Erro ao remover veículo do carrinho.");
+            }
+        } else {
+            System.out.println("Opção inválida. Tente novamente.");
+        }
+    
+
+		
 		return tabelaVeiculos.remove(v);
 	}
 
@@ -161,6 +190,18 @@ public class VeiculoDAO implements IVeiculoDAO {
 	public static Veiculo get(int i) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void visualizarCarrinho() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean removerDoCarrinho(Veiculo veiculoRemover) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 }

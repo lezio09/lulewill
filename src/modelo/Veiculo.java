@@ -44,7 +44,7 @@ public class Veiculo {
 
 	@Override
 	public String toString() {
-		return nome.toUpperCase() + " " + modelo.toUpperCase() + " " + ano + " PREÇO: R$ " + preco;
+		return nome.toUpperCase() + " " + modelo.toUpperCase() + " " + ano  + " PREÇO: R$ " + preco;
 	}
 
 	public void setAno(int novoAno) {
