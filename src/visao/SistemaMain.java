@@ -233,6 +233,7 @@ public class SistemaMain {
 				Veiculo veiculo = veiculoDAO.listarVeiculos().get(i);
 				System.out.println((i + 1) + " - " + veiculo.getNome() + " | Ano: " + veiculo.getAno() + " | Preço: R$ "
 						+ veiculo.getPreco());
+			
 			}
 
 			// Solicitando que o usuário escolha um veículo

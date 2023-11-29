@@ -12,6 +12,7 @@ public class VeiculoDAO implements IVeiculoDAO {
 	private static VeiculoDAO instancia;
 	private IVeiculoDAO veiculoDAO;
 
+	
 	private VeiculoDAO() {
 	}
 
@@ -115,6 +116,14 @@ public class VeiculoDAO implements IVeiculoDAO {
 	@Override
 	public boolean inserir(Veiculo v) {
 		
+		ArrayList<Veiculo> veiculos = veiculoDAO.listarVeiculos();
+		
+		System.out.println("----- MENU ALTERAR VEÍCULO CADASTRADO -----");
+		System.out.println("Digite o número do veículo que deseja alterar:");
+		for (int i = 0; i < veiculos.size(); i++) {
+			System.out.println(i + " - " + veiculos.get(i).getNome());
+		}
+		
 		
 		return tabelaVeiculos.add(v);
 	}
@@ -123,9 +132,13 @@ public class VeiculoDAO implements IVeiculoDAO {
 	@Override
 	public boolean alterar(Veiculo v) {
 		
-	
+		ArrayList<Veiculo> veiculos = veiculoDAO.listarVeiculos();
+
+		for (int i = 0; i < veiculos.size(); i++) {
+			System.out.println(i + " - " + veiculos.get(i).getNome());
+		}
 		
-		return false;
+		return true;
 	}
 
 	@Override
