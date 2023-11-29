@@ -2,10 +2,11 @@ package modelo;
 
 public class Veiculo {
 	private String modelo;
-	private Integer ano;
+	private long ano;
 	private String nome;
 	private Double preco;
 
+	// Constructor que permite inicializar todos os atributos
 	public Veiculo(String nome, String modelo, Integer ano, Double preco) {
 		this.nome = nome;
 		this.modelo = modelo;
@@ -14,9 +15,11 @@ public class Veiculo {
 	
 		}
 
+	// Construtor padrão vazio
 	public Veiculo() {
 		// TODO Auto-generated constructor stub
 	}
+	
 
 	public String getModelo() {
 		return modelo;
@@ -26,11 +29,11 @@ public class Veiculo {
 		this.modelo = modelo;
 	}
 
-	public Integer getAno() {
+	public long getAno() {
 		return ano;
 	}
 
-	public void setAno(Integer ano) {
+	public void setAno(long ano) {
 		this.ano = ano;
 	}
 

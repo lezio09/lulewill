@@ -231,8 +231,7 @@ public class SistemaMain {
 			// Exibindo os veículos disponíveis para o usuário escolher
 			for (int i = 0; i < veiculoDAO.listarVeiculos().size(); i++) {
 				Veiculo veiculo = veiculoDAO.listarVeiculos().get(i);
-				System.out.println((i + 1) + " - " + veiculo.getNome() + " | Ano: " + veiculo.getAno() + " | Preço: R$ "
-						+ veiculo.getPreco());
+				System.out.println((i + 1) + " - " + veiculo.getNome() + " | Ano: " + veiculo.getAno() + " | Preço: R$ "+ veiculo.getPreco());
 			
 			}
 
