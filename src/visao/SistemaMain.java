@@ -79,7 +79,7 @@ public class SistemaMain {
 		veiculo.setModelo(modelo);
 
 		System.out.print("Ano do veículo: ");
-		Integer ano = Integer.valueOf(leitura.nextLine());
+		Long ano = Long.valueOf(leitura.nextLine());
 		veiculo.setAno(ano);
 
 		System.out.println("Informe o preço do veículo: ");
